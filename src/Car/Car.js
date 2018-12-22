@@ -16,7 +16,10 @@ export default (props) => {
     return (
         <div>
             <h3>{props.name}</h3>  
-            <p>Год: {props.year}</p>
+            <div>
+                <strong>Год:</strong> {props.year}
+            </div>
+            {props.children}
         </div>
     )
 }
