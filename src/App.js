@@ -12,7 +12,8 @@ class App extends Component {
     return (
       <div className="App" style={styleWrap}>
         <h1>Hello world!</h1>
-        <Car />
+        <Car name="Toyota Sprinter" year="1988"/>
+        <Car name="Hyundai Elantra" year="2007"/>
       </div>
     );
   }

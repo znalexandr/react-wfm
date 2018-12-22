@@ -12,8 +12,11 @@ import React from 'react'
 
 export default Car */
 
-export default () => {
+export default (props) => {
     return (
-        <h2>this is component Car</h2>
+        <div>
+            <h3>{props.name}</h3>  
+            <p>Год: {props.year}</p>
+        </div>
     )
 }
