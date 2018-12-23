@@ -19,6 +19,7 @@ export default (props) => {
             <div>
                 <strong>Год:</strong> {props.year}
             </div>
+            <button onClick={props.changeTitleBtn}>Change</button>
             {props.children}
         </div>
     )
