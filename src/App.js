@@ -13,14 +13,28 @@ class App extends Component {
     showCar: false
   }
 
-  changeTitleHandler = (pageTitle) => {
-    this.setState({
-      pageTitle
-    })
-  }
+  
 
   handleShowCar = () => {
     this.setState({showCar: !this.state.showCar})
+  }
+
+  deleteItemHandler(index) {
+
+    let cars = this.state.cars.concat();
+    cars.splice(index, 1)
+
+    this.setState({
+      cars
+    }) 
+  }
+
+  changeItemNameHandler(index, event) {
+    let cars = this.state.cars.concat();
+    cars[index].name = event.target.value;
+    this.setState({
+      cars
+    }) 
   }
 
 
@@ -39,7 +53,8 @@ class App extends Component {
             key={index}
             name={car.name}
             year={car.year}
-            changeTitleBtn={() => this.changeTitleHandler(car.name)}
+            changeItemName={(event) => this.changeItemNameHandler(index, event)}
+            deleteItem={this.deleteItemHandler.bind(this, index)}
             />
         )
       })

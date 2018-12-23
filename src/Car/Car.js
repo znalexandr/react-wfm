@@ -15,11 +15,14 @@ export default Car */
 export default (props) => {
     return (
         <div>
-            <h3>{props.name}</h3>  
+            <h3>{props.name}</h3>
+            <div>
+                <input type="text" onChange={props.changeItemName} value={props.name} />
+            </div>  
             <div>
                 <strong>Год:</strong> {props.year}
             </div>
-            <button onClick={props.changeTitleBtn}>Change</button>
+            <button onClick={props.deleteItem}>Удалить</button>
             {props.children}
         </div>
     )
