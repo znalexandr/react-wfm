@@ -29,7 +29,6 @@ class App extends Component {
     const styleWrap = {
       textAlign: 'center'
     }
-    const cars = this.state.cars;
 
     return (
       <div className="App" style={styleWrap}>
@@ -38,14 +37,16 @@ class App extends Component {
         <div>
           <input type="text" onChange={this.inputChangeHandler}/>
         </div>
-        <Car 
-          name={cars[0].name} 
-          year={cars[0].year}
-          changeTitleBtn={() => this.changeTitleHandler(cars[0].name)} />
-        <Car 
-          name={cars[1].name} 
-          year={cars[1].year}
-          changeTitleBtn={() => this.changeTitleHandler(cars[1].name)} />
+        {this.state.cars.map((car, index) => {
+          return (
+            <Car 
+              key={index}
+              name={car.name}
+              year={car.year}
+              changeTitleBtn={() => this.changeTitleHandler(car.name)}
+              />
+          )
+        })}
       </div>
     );
   }
