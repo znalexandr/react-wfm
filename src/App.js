@@ -8,7 +8,17 @@ class App extends Component {
     cars: [
       {name: 'Toyota Sprinter', year: '1988'},
       {name: 'Hyundai Elantra', year: '2007'},
-    ]
+    ],
+    pageTitle: 'React Component'
+  }
+
+  changeTitleHandler = () => {
+    const oldTitle = this.state.pageTitle;
+    const newTitle = oldTitle + ' (changed)';
+
+    this.setState({
+      pageTitle: newTitle
+    })
   }
 
   render() {
@@ -20,7 +30,8 @@ class App extends Component {
 
     return (
       <div className="App" style={styleWrap}>
-        <h1>Hello world!</h1>
+        <h1>{this.state.pageTitle}</h1>
+        <button onClick={this.changeTitleHandler}>Change title</button>
         <Car name={cars[0].name} year={cars[0].year} />
         <Car name={cars[1].name} year={cars[1].year} />
       </div>
