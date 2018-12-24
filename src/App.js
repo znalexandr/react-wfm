@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Car from './Car/Car';
 
 class App extends Component {
@@ -63,7 +63,10 @@ class App extends Component {
     return (
       <div className="App" style={styleWrap}>
         <h1>{this.state.pageTitle}</h1>
-        <button onClick={this.handleShowCar}>Toggle Cars</button>
+        <button 
+          className={'btn'}
+          onClick={this.handleShowCar}
+          >Toggle Cars</button>
         {cars}
       </div>
     );

@@ -1,0 +1,13 @@
+.btn {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    &:focus,
+    &:active {
+        outline: none; 
+    }
+}
